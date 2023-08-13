@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --white-base: white;
+  --orange-base: #f86600;
+  --orange-smooth: rgba(248, 102, 0, 0.15);
+  --gray-30: #e3e5e5;
+
+  --primary-font-color: white;
+}

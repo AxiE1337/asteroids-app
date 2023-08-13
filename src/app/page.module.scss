@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #000000;
+  color: var(--primary-font-color);
+  .planetaPng {
+    height: auto;
+    position: fixed;
+    left: 0;
+    bottom: 5%;
+  }
+}
