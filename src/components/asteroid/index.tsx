@@ -6,6 +6,7 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import formatNumberWithSpaces from '@/utils/formatNumberWithSpaces'
+import formatDate from '@/utils/formatDate'
 
 const Asteroid: FC<IAsteroidProps> = ({
   asteroid,
@@ -27,7 +28,7 @@ const Asteroid: FC<IAsteroidProps> = ({
 
   return (
     <div className={styles.asteroid} key={asteroid.name}>
-      <h1>{asteroid.close_approach_data[0].close_approach_date}</h1>
+      <h1>{formatDate(asteroid.close_approach_data[0].close_approach_date)}</h1>
       <section className={styles.approach_data}>
         <div className={styles.asteroidSize}>
           <h2>
