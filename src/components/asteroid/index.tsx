@@ -5,6 +5,7 @@ import { IAsteroid } from '@/types/types'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import formatNumberWithSpaces from '@/utils/formatNumberWithSpaces'
 
 const Asteroid: FC<IAsteroidProps> = ({
   asteroid,
@@ -32,21 +33,21 @@ const Asteroid: FC<IAsteroidProps> = ({
           <h2>
             {inLunar
               ? Number(lunar).toFixed(0) + ' lunar'
-              : Number(kilometers).toFixed(0) + ' KM'}
+              : formatNumberWithSpaces(Number(kilometers).toFixed(0)) + ' км'}
           </h2>
-          <Image src="/assets/Arrow1.svg" width={80} height={15} alt="arrow" />
+          <Image src="/assets/Arrow1.svg" width={100} height={15} alt="arrow" />
         </div>
         <Image
           src="/assets/rock.png"
-          width={estimated_diameter_max > 60 ? 60 : estimated_diameter_max}
-          height={estimated_diameter_max > 60 ? 60 : estimated_diameter_max}
+          width={estimated_diameter_max > 50 ? 50 : estimated_diameter_max}
+          height={estimated_diameter_max > 50 ? 50 : estimated_diameter_max}
           alt="rock"
         />
         <div className={styles.asteroidLink}>
           <Link href={`asteroid/${asteroid.id}`}>
-            {asteroid.name.substring(1, asteroid.name.length - 1)}
+            {asteroid.name.replace(/[()]/g, '')}
           </Link>
-          <h2>{estimated_diameter_max.toFixed(0) + ' m'}</h2>
+          <h2>{'Ø ' + estimated_diameter_max.toFixed(0) + ' m'}</h2>
         </div>
       </section>
       <section className={styles.orderSection}>
@@ -55,7 +56,11 @@ const Asteroid: FC<IAsteroidProps> = ({
             {inCart ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ'}
           </button>
         )}
-        <h2>{asteroid.is_potentially_hazardous_asteroid && '⚠ Опасен'}</h2>
+        {asteroid.is_potentially_hazardous_asteroid && (
+          <h2 className={styles.hazardous_asteroid}>
+            <span>⚠ </span>Опасен
+          </h2>
+        )}
       </section>
     </div>
   )

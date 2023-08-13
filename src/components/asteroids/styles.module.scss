@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-  gap: 0.5rem;
+  gap: 24px;
   .asteroids {
     display: flex;
     flex-direction: column;
+    // justify-content: flex-start;
     gap: 1.5rem;
   }
   section {
-    margin: 0 0 1rem 0;
     h1 {
       font-family: Helvetica;
       font-size: 28px;
@@ -22,6 +22,7 @@
   .sectionKmLunar {
     display: flex;
     gap: 0.5rem;
+    margin-top: 0.5rem;
     h1 {
       cursor: pointer;
       color: var(--white-base);
