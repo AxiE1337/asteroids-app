@@ -1,12 +1,27 @@
+'use client'
+
+import { FC, useState } from 'react'
 import { IAsteroid } from '@/types/types'
-import { FC } from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-const Asteroid: FC<IAsteroidProps> = ({ asteroid, inLunar }) => {
+const Asteroid: FC<IAsteroidProps> = ({
+  asteroid,
+  inLunar,
+  handleAddToCart,
+  isCart,
+}) => {
+  const [inCart, setInCart] = useState<boolean>(false)
   const { kilometers, lunar } = asteroid.close_approach_data[0].miss_distance
   const { estimated_diameter_max, estimated_diameter_min } =
     asteroid.estimated_diameter.meters
+
+  const handeleAdd = () => {
+    if (handleAddToCart) {
+      handleAddToCart(asteroid)
+      setInCart(true)
+    }
+  }
 
   return (
     <div className={styles.asteroid} key={asteroid.name}>
@@ -32,7 +47,11 @@ const Asteroid: FC<IAsteroidProps> = ({ asteroid, inLunar }) => {
         </div>
       </section>
       <section className={styles.orderSection}>
-        <button>ЗАКАЗАТЬ</button>
+        {!isCart && (
+          <button onClick={handeleAdd} className={inCart ? styles.inCart : ''}>
+            {inCart ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ'}
+          </button>
+        )}
         <h2>{asteroid.is_potentially_hazardous_asteroid && '⚠ Опасен'}</h2>
       </section>
     </div>
@@ -44,4 +63,6 @@ export default Asteroid
 interface IAsteroidProps {
   asteroid: IAsteroid
   inLunar: boolean
+  isCart: boolean
+  handleAddToCart?: (asteroid: IAsteroid) => void
 }

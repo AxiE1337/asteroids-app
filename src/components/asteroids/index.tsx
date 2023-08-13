@@ -6,6 +6,7 @@ import { useState, FC } from 'react'
 import { IAsteroid, IResponse } from '@/types/types'
 import styles from './styles.module.scss'
 import Asteroid from '../asteroid'
+import Cart from '../cart'
 
 const loadMoreAsteroids = async (link: string) => {
   const res = await fetch(link)
@@ -16,11 +17,17 @@ const loadMoreAsteroids = async (link: string) => {
 const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [link, setLink] = useState<string>(next_link)
+  const [cartData, setCartData] = useState<IAsteroid[]>([])
+  const [send, setSend] = useState<boolean>(false)
   const [dataAsteroids, setDataAsteroids] = useState<{
     [date: string]: IAsteroid[]
   }>(data.near_earth_objects)
   const [inLunar, setInLunar] = useState<boolean>(false)
   const { ref, isIntersecting } = useIntersection()
+
+  const handleAddToCart = (asteroid: IAsteroid) => {
+    setCartData((prev) => [...prev, asteroid])
+  }
 
   useEffect(() => {
     if (isIntersecting && !isLoading) {
@@ -35,8 +42,24 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
     }
   }, [isIntersecting])
 
+  if (send) {
+    return (
+      <>
+        {cartData.map((asteroid) => (
+          <Asteroid
+            key={asteroid.id}
+            asteroid={asteroid}
+            inLunar={inLunar}
+            isCart={true}
+          />
+        ))}
+      </>
+    )
+  }
+
   return (
     <div className={styles.asteroidsGroup}>
+      <Cart asteroids={cartData} setSend={setSend} />
       <section>
         <h1>
           Ближайшие подлёты
@@ -61,7 +84,13 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
       {Object.keys(dataAsteroids).map((date) => (
         <div className={styles.asteroids} key={date}>
           {dataAsteroids[date].map((asteroid) => (
-            <Asteroid asteroid={asteroid} key={asteroid.id} inLunar={inLunar} />
+            <Asteroid
+              asteroid={asteroid}
+              key={asteroid.id}
+              inLunar={inLunar}
+              handleAddToCart={handleAddToCart}
+              isCart={false}
+            />
           ))}
         </div>
       ))}
