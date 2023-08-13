@@ -9,9 +9,13 @@ import Asteroid from '../asteroid'
 import Cart from '../cart'
 
 const loadMoreAsteroids = async (link: string) => {
-  const res = await fetch(link)
-  const data = (await res.json()) as IResponse
-  return data
+  try {
+    const res = await fetch(link)
+    const data = (await res.json()) as IResponse
+    return data
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {

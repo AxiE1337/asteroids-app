@@ -18,6 +18,17 @@
       flex-direction: column;
       align-items: center;
     }
+    .asteroidLink {
+      a {
+        color: var(--white-base);
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
     h2 {
       color: var(--white-base);
       text-align: center;

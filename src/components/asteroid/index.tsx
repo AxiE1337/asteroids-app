@@ -4,6 +4,7 @@ import { FC, useState } from 'react'
 import { IAsteroid } from '@/types/types'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Asteroid: FC<IAsteroidProps> = ({
   asteroid,
@@ -41,8 +42,10 @@ const Asteroid: FC<IAsteroidProps> = ({
           height={estimated_diameter_max > 60 ? 60 : estimated_diameter_max}
           alt="rock"
         />
-        <div>
-          <h1>{asteroid.name.substring(1, asteroid.name.length - 1)}</h1>
+        <div className={styles.asteroidLink}>
+          <Link href={`asteroid/${asteroid.id}`}>
+            {asteroid.name.substring(1, asteroid.name.length - 1)}
+          </Link>
           <h2>{estimated_diameter_max.toFixed(0) + ' m'}</h2>
         </div>
       </section>

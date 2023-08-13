@@ -7,3 +7,6 @@ const END_DATE = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
 
 export const baseUrl = 'https://api.nasa.gov/neo/rest/v1'
 export const qAllAsteroids = `${baseUrl}/feed?start_date=${START_DATE}&end_date=${START_DATE}&api_key=${API_KEY}`
+export const qAsteroidById = (id: string): string => {
+  return `${baseUrl}/neo/${id}?api_key=${API_KEY}`
+}
