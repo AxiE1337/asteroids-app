@@ -3,6 +3,8 @@ import { IAsteroidSelf } from '@/types/types'
 import styles from './styles.module.scss'
 import formatNumberWithSpaces from '@/utils/formatNumberWithSpaces'
 import formatDate from '@/utils/formatDate'
+import ErrorPage from '@/components/error'
+import Link from 'next/link'
 
 const fetchAsteroid = async (id: string) => {
   try {
@@ -14,26 +16,19 @@ const fetchAsteroid = async (id: string) => {
   }
 }
 
-/// each approach
-/// speed relative earth
-/// max time of intesection with earth
-/// distance to the earth
-/// in orbit of what
-
 const Page = async ({ params }: { params: { id: string } }) => {
   const data = await fetchAsteroid(params.id)
 
   if (!data) {
-    return (
-      <div>
-        <h1>Asteroid not found</h1>
-      </div>
-    )
+    return <ErrorPage message="Asteroid not found" />
   }
 
   return (
     <main className={styles.asteroidMain}>
       <section className={styles.asteroidSection}>
+        <Link className={styles.linkGoBack} href="/">
+          Назад
+        </Link>
         <h1 className={styles.asteroidName}>{data.name}</h1>
         <div className={styles.asteroidApproaches}>
           <h1>Сближения</h1>

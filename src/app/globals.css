@@ -11,5 +11,9 @@
   --orange-smooth: rgba(248, 102, 0, 0.15);
   --gray-30: #e3e5e5;
 
-  --primary-font-color: white;
+  --primary-bg-color: rgb(0, 0, 0);
+}
+
+body {
+  background-color: var(--primary-bg-color);
 }

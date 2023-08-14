@@ -1,0 +1,10 @@
+.loadingPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-bg-color);
+  h1 {
+    color: var(--white-base);
+  }
+}

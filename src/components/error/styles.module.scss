@@ -1,0 +1,20 @@
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-bg-color);
+  h1 {
+    z-index: 1;
+    color: var(--white-base);
+  }
+  h2 {
+    z-index: 1;
+    color: var(--white-base);
+  }
+  .link {
+    color: var(--white-base);
+  }
+}

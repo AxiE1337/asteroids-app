@@ -1,8 +1,8 @@
 import styles from './page.module.scss'
 import Asteroids from '@/components/asteroids'
-import Image from 'next/image'
 import { IResponse } from '@/types/types'
 import { qAllAsteroids } from '@/consts/url'
+import ErrorPage from '@/components/error'
 
 export const getAsteroids = async () => {
   try {
@@ -18,7 +18,7 @@ export default async function Home() {
   const data = await getAsteroids()
 
   if (!data?.near_earth_objects) {
-    return <div>Whoops something went wrong</div>
+    return <ErrorPage message="Whoops something went wrong" showLink={false} />
   }
 
   return (
