@@ -72,7 +72,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
   return (
     <div className={styles.asteroidsGroup}>
       <Cart asteroids={cartData} setSend={setSend} />
-      <section>
+      <section className={styles.asteroidsSection}>
         <h1>
           Ближайшие подлёты
           <br /> астероидов

@@ -33,7 +33,12 @@ const Asteroid: FC<IAsteroidProps> = ({
         <div className={styles.asteroidSize}>
           <h2>
             {inLunar
-              ? Number(lunar).toFixed(0) + ' lunar'
+              ? Number(lunar).toFixed(0) +
+                ` ${
+                  +Number(lunar).toFixed(0) > 4
+                    ? ' лунных орбит'
+                    : ' лунные орбиты'
+                }`
               : formatNumberWithSpaces(Number(kilometers).toFixed(0)) + ' км'}
           </h2>
           <Image src="/assets/Arrow1.svg" width={100} height={15} alt="arrow" />

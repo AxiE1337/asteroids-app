@@ -10,38 +10,42 @@
     flex-direction: column;
     gap: 24px;
   }
-  section {
+  .asteroidsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     h1 {
       font-family: Helvetica;
       font-size: max(28px, 1.458vw);
       font-style: normal;
       font-weight: 700;
       line-height: max(36px, 1.875vw);
+      padding-right: 0.5rem;
     }
-  }
-  .sectionKmLunar {
-    display: flex;
-    gap: 0.5rem;
-    h1 {
-      cursor: pointer;
-      color: var(--white-base);
-      font-family: Helvetica;
-      font-size: max(16px, 0.833vw);
-      font-style: normal;
-      font-weight: 700;
-      line-height: max(24px, 1.25vw);
-    }
-    .middleLine {
-      font-size: max(16px, 0.833vw);
-    }
-    .selected {
-      color: var(--white-base, #fff);
-      font-family: Helvetica;
-      font-size: max(16px, 0.833vw);
-      font-style: normal;
-      font-weight: 400;
-      line-height: max(24px, 1.25vw);
-      text-decoration-line: underline;
+    .sectionKmLunar {
+      display: flex;
+      gap: 0.5rem;
+      h1 {
+        cursor: pointer;
+        color: var(--white-base);
+        font-family: Helvetica;
+        font-size: max(16px, 0.833vw);
+        font-style: normal;
+        font-weight: 700;
+        line-height: max(24px, 1.25vw);
+      }
+      .middleLine {
+        font-size: max(16px, 0.833vw);
+      }
+      .selected {
+        color: var(--white-base, #fff);
+        font-family: Helvetica;
+        font-size: max(16px, 0.833vw);
+        font-style: normal;
+        font-weight: 400;
+        line-height: max(24px, 1.25vw);
+        text-decoration-line: underline;
+      }
     }
   }
   .footer {
