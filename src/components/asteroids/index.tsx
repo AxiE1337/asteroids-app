@@ -48,7 +48,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
 
   if (send) {
     return (
-      <>
+      <div className={styles.asteroids}>
         {cartData.map((asteroid) => (
           <Asteroid
             key={asteroid.id}
@@ -57,7 +57,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
             isCart={true}
           />
         ))}
-      </>
+      </div>
     )
   }
 
@@ -76,7 +76,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
           >
             в километрах
           </h1>
-          |
+          <span className={styles.middleLine}>|</span>
           <h1
             onClick={() => setInLunar(true)}
             className={!inLunar ? styles.selected : ''}

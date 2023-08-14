@@ -5,7 +5,11 @@
   gap: 8px;
   margin: 0.5rem 0;
   h1 {
-    font-size: 1.5rem;
+    color: var(--white-base);
+    font-family: Helvetica;
+    font-size: max(24px, 1.25vw);
+    font-style: normal;
+    font-weight: 700;
   }
   h2 {
     font-weight: 400;
@@ -28,27 +32,27 @@
         color: var(--white-base);
         text-align: center;
         font-family: Helvetica;
-        font-size: 16px;
+        font-size: max(16px, 0.833vw);
         font-style: normal;
         font-weight: 400;
-        line-height: 24px;
+        line-height: max(24px, 1.25vw);
       }
       h2 {
         text-align: left;
-        font-size: 12px;
+        font-size: max(12px, 0.625vw);
         font-style: normal;
         font-weight: 400;
-        line-height: 16px;
+        line-height: max(16px, 0.833vw);
       }
     }
     h2 {
       color: var(--white-base);
       text-align: center;
       font-family: Helvetica;
-      font-size: 16px;
+      font-size: max(16px, 0.833vw);
       font-style: normal;
       font-weight: 400;
-      line-height: 24px;
+      line-height: max(24px, 1.25vw);
     }
   }
   .orderSection {
@@ -65,10 +69,10 @@
       background-color: var(--orange-smooth);
       color: var(--orange-base);
       font-family: Helvetica;
-      font-size: 11px;
+      font-size: max(11px, 0.573vw);
       font-style: normal;
       font-weight: 700;
-      line-height: 20px;
+      line-height: max(20px, 1.042vw);
       letter-spacing: 1px;
       border: none;
       &:hover {
@@ -83,7 +87,7 @@
     .hazardous_asteroid {
       color: var(--gray-30);
       font-family: Helvetica;
-      font-size: 14px;
+      font-size: max(14px, 0.729vw);
       font-style: normal;
       font-weight: 400;
       line-height: 20px;

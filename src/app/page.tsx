@@ -28,8 +28,9 @@ export default async function Home() {
         className={styles.planetaPng}
         src="/assets/planeta.png"
         alt="planeta"
-        width={436}
+        width={377}
         height={436}
+        sizes="(max-width: 768px) 1000px, 377px"
         priority
       />
       <Header />

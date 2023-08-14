@@ -8,8 +8,27 @@
   color: var(--primary-font-color);
   .planetaPng {
     height: auto;
+    width: max(30vw, 377px);
     position: fixed;
     left: 0;
     bottom: 5%;
+  }
+}
+
+@media (max-width: 920px) {
+  .main {
+    .planetaPng {
+      left: -290px;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .planetaPng {
+      left: -325px;
+    }
   }
 }
