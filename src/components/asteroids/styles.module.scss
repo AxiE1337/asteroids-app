@@ -1,5 +1,6 @@
 .asteroidsGroup {
-  margin-top: 10%;
+  margin-top: 150px;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -7,7 +8,7 @@
   .asteroids {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 24px;
   }
   section {
     h1 {
@@ -21,7 +22,6 @@
   .sectionKmLunar {
     display: flex;
     gap: 0.5rem;
-    margin-top: 0.5rem;
     h1 {
       cursor: pointer;
       color: var(--white-base);
@@ -49,45 +49,5 @@
 @media (max-width: 768px) {
   .asteroidsGroup {
     margin-left: 15%;
-    .asteroids {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    section {
-      h1 {
-        font-family: Helvetica;
-        font-size: max(28px, 1.458vw);
-        font-style: normal;
-        font-weight: 700;
-        line-height: max(36px, 1.875vw);
-      }
-    }
-    .sectionKmLunar {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-      h1 {
-        cursor: pointer;
-        color: var(--white-base);
-        font-family: Helvetica;
-        font-size: max(16px, 0.833vw);
-        font-style: normal;
-        font-weight: 700;
-        line-height: max(24px, 1.25vw);
-      }
-      .middleLine {
-        font-size: max(16px, 0.833vw);
-      }
-      .selected {
-        color: var(--white-base, #fff);
-        font-family: Helvetica;
-        font-size: max(16px, 0.833vw);
-        font-style: normal;
-        font-weight: 400;
-        line-height: max(24px, 1.25vw);
-        text-decoration-line: underline;
-      }
-    }
   }
 }

@@ -48,15 +48,20 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
 
   if (send) {
     return (
-      <div className={styles.asteroids}>
-        {cartData.map((asteroid) => (
-          <Asteroid
-            key={asteroid.id}
-            asteroid={asteroid}
-            inLunar={inLunar}
-            isCart={true}
-          />
-        ))}
+      <div className={styles.asteroidsGroup}>
+        <section>
+          <h1>Заказ отправлен!</h1>
+        </section>
+        <div className={styles.asteroids}>
+          {cartData.map((asteroid) => (
+            <Asteroid
+              key={asteroid.id}
+              asteroid={asteroid}
+              inLunar={inLunar}
+              isCart={true}
+            />
+          ))}
+        </div>
       </div>
     )
   }
