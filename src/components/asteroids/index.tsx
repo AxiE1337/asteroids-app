@@ -62,6 +62,9 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
             />
           ))}
         </div>
+        <footer className={styles.footer}>
+          <h1>© Все права и планета защищены</h1>
+        </footer>
       </div>
     )
   }
