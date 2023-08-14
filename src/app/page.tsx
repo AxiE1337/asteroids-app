@@ -1,7 +1,6 @@
 import styles from './page.module.scss'
 import Asteroids from '@/components/asteroids'
 import Image from 'next/image'
-import Header from '@/components/header'
 import { IResponse } from '@/types/types'
 import { qAllAsteroids } from '@/consts/url'
 
@@ -24,16 +23,6 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <Image
-        className={styles.planetaPng}
-        src="/assets/planeta.png"
-        alt="planeta"
-        width={377}
-        height={436}
-        sizes="(max-width: 768px) 1000px, 377px"
-        priority
-      />
-      <Header />
       <Asteroids data={data} next_link={data.links.next} />
     </main>
   )
