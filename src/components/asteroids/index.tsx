@@ -52,7 +52,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
   if (send) {
     return (
       <div className={styles.asteroidsGroup}>
-        <section>
+        <section className={styles.asteroidsSection}>
           <h1>Заказ отправлен!</h1>
         </section>
         <div className={styles.asteroids}>
