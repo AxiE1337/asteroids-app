@@ -108,7 +108,13 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
           ))}
         </div>
       ))}
-      {!isLoading ? <div ref={ref}>more</div> : <div>loading...</div>}
+      {!isLoading ? (
+        <div ref={ref} className={styles.loadMore}>
+          more
+        </div>
+      ) : (
+        <div className={styles.loadMore}>loading...</div>
+      )}
     </div>
   )
 }
