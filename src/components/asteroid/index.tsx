@@ -31,7 +31,7 @@ const Asteroid: FC<IAsteroidProps> = ({
       <h1>{formatDate(asteroid.close_approach_data[0].close_approach_date)}</h1>
       <section className={styles.approach_data}>
         <div className={styles.asteroidSize}>
-          <h2>
+          <h2 data-cy="distance">
             {inLunar
               ? Number(lunar).toFixed(0) +
                 ` ${
@@ -50,7 +50,7 @@ const Asteroid: FC<IAsteroidProps> = ({
           alt="rock"
         />
         <div className={styles.asteroidLink}>
-          <Link href={`asteroid/${asteroid.id}`}>
+          <Link href={`asteroid/${asteroid.id}`} data-cy="asteroidLink">
             {asteroid.name.replace(/[()]/g, '')}
           </Link>
           <h2>{'Ø ' + estimated_diameter_max.toFixed(0) + ' m'}</h2>
@@ -58,7 +58,11 @@ const Asteroid: FC<IAsteroidProps> = ({
       </section>
       <section className={styles.orderSection}>
         {!isCart && (
-          <button onClick={handeleAdd} className={inCart ? styles.inCart : ''}>
+          <button
+            data-cy="addToCartBtn"
+            onClick={handeleAdd}
+            className={inCart ? styles.inCart : ''}
+          >
             {inCart ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ'}
           </button>
         )}

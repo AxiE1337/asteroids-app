@@ -62,7 +62,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
             />
           ))}
         </div>
-        <footer className={styles.footer}>
+        <footer className={styles.footer} data-cy="footer">
           <h1>© Все права и планета защищены</h1>
         </footer>
       </div>
@@ -81,6 +81,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
           <h1
             onClick={() => setInLunar(false)}
             className={inLunar ? styles.selected : ''}
+            data-cy="inKm"
           >
             в километрах
           </h1>
@@ -88,6 +89,7 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
           <h1
             onClick={() => setInLunar(true)}
             className={!inLunar ? styles.selected : ''}
+            data-cy="inLunar"
           >
             в лунных орбитах
           </h1>

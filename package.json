@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@types/node": "20.4.10",
@@ -21,6 +22,7 @@
     "useful-custom-react-hooks": "^1.0.5"
   },
   "devDependencies": {
+    "cypress": "^12.17.3",
     "sass": "^1.65.1"
   }
 }

@@ -10,12 +10,16 @@ const Cart: FC<ICartProps> = ({ asteroids, setSend }) => {
   }
 
   return (
-    <div className={styles.cart}>
-      <h1>
+    <div className={styles.cart} data-cy="cart">
+      <h1 data-cy="cartText">
         Корзина <br />
         {asteroids.length} астероида
       </h1>
-      <button onClick={handleSend} className={styles.cartSendBtn}>
+      <button
+        data-cy="cartBtn"
+        onClick={handleSend}
+        className={styles.cartSendBtn}
+      >
         Отправить
       </button>
     </div>

@@ -26,10 +26,12 @@ const Page = async ({ params }: { params: { id: string } }) => {
   return (
     <main className={styles.asteroidMain}>
       <section className={styles.asteroidSection}>
-        <Link className={styles.linkGoBack} href="/">
+        <Link className={styles.linkGoBack} href="/" data-cy="goBackLink">
           Назад
         </Link>
-        <h1 className={styles.asteroidName}>{data.name}</h1>
+        <h1 data-cy="asteroidName" className={styles.asteroidName}>
+          {data.name}
+        </h1>
         <div className={styles.asteroidApproaches}>
           <h1>Сближения</h1>
           {data.close_approach_data.map((approach, i) => (

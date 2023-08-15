@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-cy="header">
       <Image
         className={styles.planetaPng}
         src="/assets/planeta.png"
@@ -14,7 +14,7 @@ const Header = () => {
         sizes="(max-width: 768px) 1000px, 377px"
         priority
       />
-      <h1>ARMAGEDDON 2023</h1>
+      <h1 data-cy="headerTitle">ARMAGEDDON 2023</h1>
       <h2>
         ООО “Команда им. Б. Уиллиса”.
         <br /> Взрываем астероиды с 1998 года.
