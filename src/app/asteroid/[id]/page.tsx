@@ -19,8 +19,6 @@ const fetchAsteroid = async (id: string) => {
 const Page = async ({ params }: { params: { id: string } }) => {
   const data = await fetchAsteroid(params.id)
 
-  console.log(data?.close_approach_data)
-
   if (!data) {
     return <ErrorPage message="Asteroid not found" />
   }

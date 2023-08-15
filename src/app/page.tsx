@@ -4,11 +4,11 @@ import { IResponse } from '@/types/types'
 import { qAllAsteroids } from '@/consts/url'
 import ErrorPage from '@/components/error'
 
-export const getAsteroids = async () => {
+const getAsteroids = async (): Promise<IResponse | undefined> => {
   try {
     const res = await fetch(qAllAsteroids)
     const data = await res.json()
-    return data as IResponse
+    return data
   } catch (e) {
     console.error(e)
   }
