@@ -9,8 +9,10 @@ import Asteroid from '../asteroid'
 import Cart from '../cart'
 
 const loadMoreAsteroids = async (link: string) => {
+  const httpsLink = link.split('')
+  httpsLink.splice(4, 0, 's')
   try {
-    const res = await fetch(link)
+    const res = await fetch(httpsLink.join(''))
     const data = (await res.json()) as IResponse
     return data
   } catch (e) {
