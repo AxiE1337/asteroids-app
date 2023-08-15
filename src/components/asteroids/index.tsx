@@ -11,6 +11,8 @@ import Cart from '../cart'
 const loadMoreAsteroids = async (link: string) => {
   const httpsLink = link.split('')
   httpsLink.splice(4, 0, 's')
+  console.log(httpsLink.join(''))
+
   try {
     const res = await fetch(httpsLink.join(''))
     const data = (await res.json()) as IResponse

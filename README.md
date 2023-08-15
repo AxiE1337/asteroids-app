@@ -18,17 +18,23 @@ npm run dev
 
 ### E2E Testing
 
+1. Run the development server
+
 ```bash
 npm run dev
+```
 
+2. Open cypress in new terminal
+
+```bash
 npm run cypress:open
 ```
 
-Choose E2E Testing
+3. Choose E2E Testing
 
-Start E2E Testing in Chrome or other browsers
+4. Start E2E Testing in Chrome or other browsers
 
-Then in cypress/e2e folder click on spec.cy.ts
+5. Then in cypress/e2e folder click on spec.cy.ts
 
 ## This app built with:
 
