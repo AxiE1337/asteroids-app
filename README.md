@@ -4,7 +4,7 @@ First, run the development server:
 
 1. Clone repository
 
-2. Create .env with API_KEY = your API key
+2. Create .env with API_KEY='your API key' which you can get here: https://api.nasa.gov
 
 ```bash
 npm install
@@ -43,3 +43,4 @@ npm run cypress:open
 - [Sass](https://sass-lang.com)
 - [Useful-custom-react-hooks](https://www.npmjs.com/package/useful-custom-react-hooks) my own package
 - [Cypress](https://www.cypress.io)
+- [NASA-API](https://api.nasa.gov)
