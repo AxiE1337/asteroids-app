@@ -45,8 +45,8 @@ const Asteroid: FC<IAsteroidProps> = ({
         </div>
         <Image
           src="/assets/rock.png"
-          width={estimated_diameter_max > 50 ? 50 : estimated_diameter_max}
-          height={estimated_diameter_max > 50 ? 50 : estimated_diameter_max}
+          width={estimated_diameter_max * 0.2 + 10}
+          height={estimated_diameter_max * 0.2 + 10}
           alt="rock"
         />
         <div className={styles.asteroidLink}>

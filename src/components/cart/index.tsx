@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { IAsteroid } from '@/types/types'
+import { handleAsteroidCount } from '@/utils/asteroidCount'
 import styles from './styles.module.scss'
 
 const Cart: FC<ICartProps> = ({ asteroids, setSend }) => {
@@ -13,7 +14,7 @@ const Cart: FC<ICartProps> = ({ asteroids, setSend }) => {
     <div className={styles.cart} data-cy="cart">
       <h1 data-cy="cartText">
         Корзина <br />
-        {asteroids.length} астероида
+        {handleAsteroidCount(asteroids.length.toString())}
       </h1>
       <button
         data-cy="cartBtn"

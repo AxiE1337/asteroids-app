@@ -33,7 +33,10 @@ const Asteroids: FC<IAsteroidProps> = ({ data, next_link }) => {
   const { ref, isIntersecting } = useIntersection()
 
   const handleAddToCart = (asteroid: IAsteroid) => {
-    setCartData((prev) => [...prev, asteroid])
+    const isInCart = cartData.find((item) => item.id === asteroid.id)
+    if (!isInCart) {
+      setCartData((prev) => [...prev, asteroid])
+    }
   }
 
   useEffect(() => {
